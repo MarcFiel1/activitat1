@@ -12,6 +12,7 @@
     $passwd2=filter_input(INPUT_POST,'passwd2');
     $boton_registar=filter_input(INPUT_POST,'boton');
 
+
     /*Variable que conecta el nombre de usuario y el login con la base de datos*/
     $db=getConnection($dsn, $dbuser,$dbpasswd);
 
@@ -23,7 +24,8 @@
     /* Creo un if para que la passwd y la confirm passwd sean iguales y si en este caso lo son, que ejecute 
     la sentencia y me lleve al Home. Y si no que me diga que las passwords son diferentes*/
     if($passwd==$passwd2){
-        $sentencia->execute([$username,$email,$passwd]);
+        $encriptar = password_hash($passwd,PASSWORD_BCRYPT);
+        $sentencia->execute([$username,$email,$encriptar]);
         header("Location:?url=home");
     } else  {
         echo "<a href='?url=register'>Vuelve al Register</a><br>";

@@ -1,3 +1,9 @@
+<?php
+if(isset($_REQUEST['politica-cookies'])){
+    $caducicad = time() + (60*60*24*30);
+    setcookie('politica', '1', $caducicad);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +40,6 @@
             flex-direction: row;
             margin-top: 50px;
             justify-content: space-around;
-        
             width: 100%;
             height: 200px;
         }
@@ -69,6 +74,19 @@
             cursor: pointer;
         }
 
+        .cookies{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: auto;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        
+            background-color: #f5f5f5;
+            font-size:20px;
+
+        }
         a{
             text-decoration: none;
         }
@@ -97,7 +115,14 @@
     </div>
 </a>
 </div>
-<main class="col-span-10">
-</main>
+<div class="cookies">
+        <?php if (!isset($_REQUEST['politica-cookies']) && !isset ($_COOKIE['politica'])): ?>
+            <div>
+                <h3>AVISO DE COOKIES</h3>
+                <p>Utilizamos cookies propias y de terceros para mejorar nuestro servicio. Si continúa con la navegación, consideramos que acepta este uso.</p><br>
+                <button style="padding: 15px;"><a href="?politica-cookies=1">Aceptar</a></button>
+            </div>
+            <?php endif; ?>
+    </div>
 </body>
 </html>

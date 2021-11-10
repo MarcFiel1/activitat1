@@ -18,28 +18,31 @@
         }
         .titulo{
             display: flex;
-            width: 90%;
-            height: 100px;
+            width: 100%;
+            height: 50px;
             align-items: center;
-            justify-content: left;
+            justify-content: center;
             background: linear-gradient(to bottom, #FFCA96, white);
             color: navy;
             padding: 10px;
         }
         .link{
             display: flex;
-            width: 10%;
+            width: 100%;
+            height: 20px;
+            padding-bottom: 10px;
+            background: linear-gradient(to top, #FFCA96, white);
             justify-content:space-around;
-            background: linear-gradient(to bottom, #FFCA96, white);
+            font-size: 20px;
         }
 
         .cuerpo{
             display: flex;
             width: 100%;
-            height:300px;
             align-items: center;
             justify-content: center;
-            margin-top: 100px;
+            margin-top: 30px;
+        
         }
 
         .formulario{
@@ -51,6 +54,7 @@
             align-items: center;
             justify-content: space-around;
             padding: 30px;
+            background-color: #F4F6F6 
             
         }
 
@@ -61,8 +65,13 @@
             padding: 20px;
             justify-content: center;
             align-items: center;
-            background-color: #D1F2EB;
+            background-color: #FFCA96;
             cursor: pointer;
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
         }
 
 
@@ -71,14 +80,14 @@
 </head>
 <body>
 <header class="header">
-    <div class="link">
-            <a href="?url=home">Home</a>
-            <a href="?url=login">Login</a>
-        </div>
         <div class="titulo">
             <h1>SCHOOL</h1>
         </div>        
     </header>
+    <div class="link">
+            <a href="?url=home">Home</a>
+            <a href="?url=login">Login</a>
+        </div>
     
     <!-- formulario donde se envian los datos para registrarse-->
     <div class="cuerpo">

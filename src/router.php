@@ -22,6 +22,14 @@
                     return 'register_action';
                 case 'escritorio';
                     return 'escritorio';
+                case 'lista';
+                    return 'lista';
+                case 'lista_action';
+                    return 'lista_action';
+                case 'tarea';
+                    return 'tarea';
+                case 'tarea_action';
+                    return 'tarea_action';
                 default:
                     return 'home';
             }
